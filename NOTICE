@@ -1,0 +1,14 @@
+Laya Chat
+
+代码以 MIT 协议发布，见 LICENSE。以下第三方内容按各自协议使用：
+
+- 判断模型 Laya：https://github.com/NandhaKishorM/laya ，Apache 2.0；
+  出厂权重 convaiinnovations/laya（Hugging Face）。
+- 题目集的形式与 eval/labeled_set.json 的 30 条标注对话：移植自
+  jev-chat/jev-chat-jarvis（https://github.com/jev-chat/jev-chat-jarvis）的
+  tools/jev/questions.py 与 tools/jev/fixtures/labeled_set.json，MIT，
+  Copyright (c) 2026 Finderchangchang 与 jev-chat 贡献者。
+  改动：3 道 noul 题改为两选项 choice 题，消息方标记 her 改为 other；新版题目
+  （laya_chat/questions_send.py）为本项目自行编写。
+- 训练数据中的部分对话来自 LCCC（清华大学 CoAI，https://github.com/thu-coai/CDial-GPT ，
+  论文 arXiv:2008.03946），通过 Hugging Face 数据集 silver/lccc 获取，仅用于模型训练。

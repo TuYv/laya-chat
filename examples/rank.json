@@ -1,0 +1,16 @@
+{
+  "relationship": "对方是我的伴侣",
+  "messages": [
+    {"from": "other", "text": "今天几号了"},
+    {"from": "me", "text": "23号啊，怎么了"},
+    {"from": "other", "text": "没什么"},
+    {"from": "other", "text": "你是不是又忘了"},
+    {"from": "me", "text": "忘了什么"},
+    {"from": "other", "text": "那你说说看"}
+  ],
+  "candidates": [
+    "我翻一下我们之前的聊天记录，马上告诉你。",
+    "哎呀你就直说嘛，我真想不起来了。",
+    "对不起对不起，我一定改。"
+  ]
+}

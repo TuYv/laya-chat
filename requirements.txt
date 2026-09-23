@@ -1,0 +1,5 @@
+laya>=0.3.5
+pyobjc-framework-Quartz
+pyobjc-framework-Cocoa
+pyobjc-framework-ApplicationServices
+pillow

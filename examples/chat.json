@@ -1,0 +1,11 @@
+{
+  "relationship": "对方是我的伴侣",
+  "messages": [
+    {"from": "other", "text": "今天几号了"},
+    {"from": "me", "text": "23号啊，怎么了"},
+    {"from": "other", "text": "没什么"},
+    {"from": "other", "text": "你是不是又忘了"},
+    {"from": "me", "text": "忘了什么"},
+    {"from": "other", "text": "那你说说看"}
+  ]
+}

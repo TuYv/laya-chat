@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+/tmp/
+data/raw/
+data/labeled/
+data/dataset/
+data/run.log
+data/*.zip
+data/kaggle_dataset/
+data/kaggle_output/
+.DS_Store
