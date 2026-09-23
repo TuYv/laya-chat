@@ -50,12 +50,12 @@
 
 需要：macOS（Apple 芯片），微信 mac 4.x，[uv](https://docs.astral.sh/uv/)。求助按钮需要本机装有 `claude` 或 `codex` 命令，没有也能用。
 
-**方式一：让 AI 助手装（推荐）。** 这个仓库本身是一个 Claude Code / Codex 的 skill。打开 Claude Code 或 Codex，把下面这段整个粘贴进去：
+**方式一：让 AI 助手装（推荐）。** 打开 Claude Code 或 Codex，把下面这段整个粘贴进去：
 
 ```text
 请帮我安装 Laya Chat（微信回复副驾，macOS）。
-1. 把 https://github.com/TuYv/laya-chat 克隆到 ~/.claude/skills/laya-chat（如果你是 Codex，放到 ~/.codex/skills/laya-chat）。
-2. 读仓库里的 SKILL.md，严格按它的步骤执行：建 Python 3.12 虚拟环境并装依赖、下载模型权重并自检、打包成 ~/Applications/Laya Chat.app 并加开机启动。
+1. 把 https://github.com/TuYv/laya-chat 克隆到 ~/laya-chat。
+2. 读 ~/laya-chat/SKILL.md，严格按它的步骤执行：建 Python 3.12 虚拟环境并装依赖、下载模型权重并自检、打包成 ~/Applications/Laya Chat.app 并加开机启动。
 3. 需要我在系统设置里开"屏幕录制"和"辅助功能"权限时，告诉我具体点哪里，等我做完再继续。
 4. 装完后教我怎么验收：打开微信一个会话、在输入框打一句话，看微信右侧的卡片有没有出现判断结果。
 注意：不要替我发送任何消息，不要在验收时自己往微信输入框里填字，不要把我的聊天内容写进任何文件。
@@ -121,7 +121,7 @@ data/           训练数据流水线（见 data/README.md）
 notebooks/      Kaggle 微调笔记本
 eval/           评测脚本与 30 条标注对话
 scripts/        第一版（助手驱动）的脚本，保留作开发工具
-SKILL.md        给助手看的安装向导
+SKILL.md        给 AI 助手看的安装步骤（方式一里的 prompt 会让它读这个文件）
 ```
 
 ## 致谢与许可
