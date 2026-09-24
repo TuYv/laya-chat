@@ -7,7 +7,8 @@
 2026-09-23 在微信 mac 4.1 上验证：
 - list 消息 的每个子元素：AXIdentifier 是 chat_bubble_item_view 的是气泡，title 是正文；
   identifier 为空的是时间戳；virtual_cell 是滚出屏幕的占位，没有内容。
-- 输入框是 AXTextArea，title 就是当前会话名；搜索框的 description 是「搜索」。
+  英文界面里这个 list 的 description 是 Messages，不是「消息」。
+- 输入框是 AXTextArea，title 就是当前会话名；搜索框的 description 是「搜索」或 Search。
 """
 import os
 import subprocess
@@ -29,6 +30,10 @@ APP_ALIASES = {
     "wechat": ["WeChat", "微信"],
     "微信": ["WeChat", "微信"],
 }
+
+# 微信 mac 跟系统语言：中文界面叫「消息」，英文界面叫 Messages。
+MESSAGE_LIST_NAMES = {"消息", "Messages", "messages"}
+SEARCH_LABELS = {"搜索", "Search", "search"}
 
 
 def _attr(el, name):
@@ -100,14 +105,14 @@ class ChatReader:
             return
         role = _attr(el, "AXRole")
         if role == "AXList":
-            name = _attr(el, "AXDescription") or _attr(el, "AXTitle")
-            if name == "消息":
+            name = _attr(el, "AXDescription") or _attr(el, "AXTitle") or ""
+            if name in MESSAGE_LIST_NAMES:
                 found["list"] = el
                 return                       # 消息列表下面不用再走
         elif role == "AXTextArea":
             desc = _attr(el, "AXDescription") or ""
             title = _attr(el, "AXTitle") or ""
-            if desc != "搜索" and title != "搜索":
+            if desc not in SEARCH_LABELS and title not in SEARCH_LABELS:
                 found["textarea"] = el
         for c in _attr(el, "AXChildren") or []:
             self._walk(c, found, depth + 1)
